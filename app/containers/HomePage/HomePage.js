@@ -38,7 +38,7 @@ export default class HomePage extends React.PureComponent {
         </Helmet>
         <div className='home-page'>
           <section className='centered'>
-            <h2>I Want a Puppy!</h2>
+            {/* <h2>I Want a Puppy!</h2> */}
             <p>For when you need a puppy GIF right now.</p>
           </section>
           <section>
