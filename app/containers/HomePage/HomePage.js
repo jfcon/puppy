@@ -7,7 +7,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import ReposList from 'components/ReposList';
 import './style.scss';
 
 export default class HomePage extends React.PureComponent {
@@ -23,34 +22,20 @@ export default class HomePage extends React.PureComponent {
   }
 
   render() {
-    const { loading, error, repos, username, onChangeUsername, onSubmitForm } = this.props;
-    const reposListProps = {
-      loading,
-      error,
-      repos
-    };
-
     return (
       <article>
         <Helmet>
           <title>I Need a Puppy!</title>
-          <meta name='description' content='For when you need a puppy GIF, now!' />
+          <meta name="description" content="For when you need a puppy GIF, now!" />
         </Helmet>
-        <div className='home-page'>
-          <section className='centered'>
+        <div className="home-page">
+          <section className="centered">
             {/* <h2>I Want a Puppy!</h2> */}
             <p>For when you need a puppy GIF right now.</p>
           </section>
-          <section>
-            <h2>Try me!</h2>
-            <form onSubmit={onSubmitForm}>
-              <label htmlFor='username'>
-                Show Github repositories by
-                <span className='at-prefix'>@</span>
-                <input id='username' type='text' placeholder='flexdinesh' value={username} onChange={onChangeUsername} />
-              </label>
-            </form>
-            <ReposList {...reposListProps} />
+          <section className="gifSpot">
+            {/* <h2>Gimme!</h2> */}
+            <input type="submit" value="Puppy, please!" />
           </section>
         </div>
       </article>
