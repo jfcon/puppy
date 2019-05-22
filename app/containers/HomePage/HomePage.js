@@ -15,13 +15,7 @@ export default class HomePage extends React.PureComponent {
   /**
    * when initial state username is not null, submit the form to load repos
    */
-  componentDidMount() {
-    App.getPuppyGif();
-  }
 
-  getPuppyGif = () => {
-    App.getPuppyGif();
-  }
 
   render() {
     return (
