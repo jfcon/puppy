@@ -8,7 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import './style.scss';
-import App from '../App/App';
+import HomePageActions from './actions';
 
 export default class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -16,11 +16,11 @@ export default class HomePage extends React.PureComponent {
    * when initial state username is not null, submit the form to load repos
    */
   componentDidMount() {
-    App.getPuppyGif();
+    HomePageActions.getPuppyGif();
   }
 
   getPuppyGif = () => {
-    App.getPuppyGif();
+    HomePageActions.getPuppyGif();
   }
 
   render() {
