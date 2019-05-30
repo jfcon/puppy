@@ -35,12 +35,12 @@ const GphApiClient = require('giphy-js-sdk-core');
 
 const client = GphApiClient('CyIdybqkZ7SkYoXz8NBOsqIV4bSpDx86');
 
-// Gif Search
-client.search('gifs', {'q': 'puppies'})
-  .then((response) => {
-    response.data.forEach((gifObject) => {
-      console.log(gifObject);
-    });
-  })
-  .catch((err) => {
-  });
+// // Gif Search
+// client.search('gifs', {'q': 'puppies'})
+//   .then((response) => {
+//     response.data.forEach((gifObject) => {
+//       console.log(gifObject);
+//     });
+//   })
+//   .catch((err) => {
+//   });
