@@ -36,7 +36,9 @@ export function changeUsername(name) {
 }
 
 
-export function getPuppyGif(puppyGif) {
+export function getPuppyGif() {
+    console.log('hello!')
+
 // Gif Search
 // client.search('gifs', {'q': 'puppies'})
 //   .then((response) => {
@@ -47,11 +49,10 @@ export function getPuppyGif(puppyGif) {
 //   .catch((err) => {
 //   });
 
-//   return {
+  // return {
 //     type: GET_PUPPY,
 //     puppyGif
-//   };
-  console.log('hello!')
+  // };
 }
 
 

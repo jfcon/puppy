@@ -8,7 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import './style.scss';
-import HomePageActions from './actions';
+import ActionJackson from './actions';
 
 export default class HomePage extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -20,7 +20,8 @@ export default class HomePage extends React.PureComponent {
   // }
 
   getPuppyGif = () => {
-    HomePageActions.getPuppyGif();
+    ActionJackson.getPuppyGif;
+    // console.log("hello there")
   }
 
   render() {
