@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  
+  constructor () {
+    super();
+    this.state = {
+      gif : ""
+    }
+  }
   
 
   componentDidMount () {
@@ -13,7 +19,9 @@ class App extends Component {
     client.search( 'gifs', { "q": "puppies", "offset": random , "limit": 1 } )
     .then((response) => {
       response.data.forEach((gifObject) => {
-        console.log(gifObject)
+        let theGIF = gifObject.images.original.url
+        console.log(theGIF)
+        this.setState({gif : theGIF})
       })
     })
     .catch((err) => {
@@ -25,7 +33,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={this.state.gif}  alt="puppy gif" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
