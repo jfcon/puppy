@@ -8,8 +8,9 @@ class App extends Component {
   componentDidMount () {
     const GphApiClient = require('giphy-js-sdk-core')
     const client = GphApiClient("CyIdybqkZ7SkYoXz8NBOsqIV4bSpDx86")
+    let random = Math.floor(Math.random() * 101);
     /// Gif Search
-    client.search('gifs', {"q": "puppies"})
+    client.search( 'gifs', { "q": "puppies", "offset": random , "limit": 1 } )
     .then((response) => {
       response.data.forEach((gifObject) => {
         console.log(gifObject)
