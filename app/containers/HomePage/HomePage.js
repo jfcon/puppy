@@ -45,8 +45,8 @@ export default class HomePage extends React.PureComponent {
   }
 }
 
-HomePage.propTypes = {
-  onSubmitForm: PropTypes.func,
-  username: PropTypes.string,
-  onChangeUsername: PropTypes.func
-};
+// HomePage.propTypes = {
+//   onSubmitForm: PropTypes.func,
+//   username: PropTypes.string,
+//   onChangeUsername: PropTypes.func
+// };

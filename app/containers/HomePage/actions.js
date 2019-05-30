@@ -15,7 +15,11 @@
  *    }
  */
 
-import { CHANGE_USERNAME } from './constants';
+import { CHANGE_USERNAME, GET_PUPPY } from './constants';
+
+const GphApiClient = require('giphy-js-sdk-core');
+
+const client = GphApiClient('CyIdybqkZ7SkYoXz8NBOsqIV4bSpDx86');
 
 /**
  * Changes the input field of the form
@@ -31,11 +35,9 @@ export function changeUsername(name) {
   };
 }
 
-const GphApiClient = require('giphy-js-sdk-core');
 
-const client = GphApiClient('CyIdybqkZ7SkYoXz8NBOsqIV4bSpDx86');
-
-// // Gif Search
+export function getPuppyGif(puppyGif) {
+// Gif Search
 // client.search('gifs', {'q': 'puppies'})
 //   .then((response) => {
 //     response.data.forEach((gifObject) => {
@@ -44,3 +46,13 @@ const client = GphApiClient('CyIdybqkZ7SkYoXz8NBOsqIV4bSpDx86');
 //   })
 //   .catch((err) => {
 //   });
+
+//   return {
+//     type: GET_PUPPY,
+//     puppyGif
+//   };
+  console.log('hello!')
+}
+
+
+
