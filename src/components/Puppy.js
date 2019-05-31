@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './Puppy.css';
-
+import '../styles/Puppy.css';
 
 
 class PuppyWindow extends Component {
