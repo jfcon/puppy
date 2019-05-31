@@ -10,18 +10,21 @@ class PuppyWindow extends Component {
       gif : ""
     }
   }
-  
-  componentDidMount () {
 
-  const GphApiClient = require('giphy-js-sdk-core')
+
+  componentDidMount () {
+    this.getPuppyGif();
+  }
+
+  getPuppyGif = () => {
+    const GphApiClient = require('giphy-js-sdk-core')
     const client = GphApiClient('CyIdybqkZ7SkYoXz8NBOsqIV4bSpDx86')
     let random = Math.floor(Math.random() * 251);
     /// Gif Search
-    client.search( 'gifs', { "q": "puppies", "offset": random , "limit": 1 } )
+    client.search( 'gifs', { "q": "puppies", "offset": random , "limit": 1 , "rating": "g"} )
     .then((response) => {
       response.data.forEach((gifObject) => {
         let theGIF = gifObject.images.original.url
-        console.log(theGIF)
         this.setState({gif : theGIF})
       })
     })
@@ -29,23 +32,13 @@ class PuppyWindow extends Component {
     })
   }
 
-
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={this.state.gif}  alt="puppy gif" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <div className="Puppy">
+        <header className="Puppy-header">
+          <img src={this.state.gif}  alt="puppy gif" /><br />
+          <button onClick={this.getPuppyGif}>`Fetch` Me Another!</button>
+          <p>Please be patient. It may take a few seconds to load...</p>
         </header>
       </div>
     );
