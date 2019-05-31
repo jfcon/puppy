@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
+require('dotenv').config();
+
+//GIPHY KEYS
+const client_id = process.env.GIPHY_KEY; // Your client id
+console.log(client_id);
 
 class App extends Component {
   
@@ -13,7 +18,7 @@ class App extends Component {
 
   componentDidMount () {
     const GphApiClient = require('giphy-js-sdk-core')
-    const client = GphApiClient("CyIdybqkZ7SkYoXz8NBOsqIV4bSpDx86")
+    const client = GphApiClient(client_id)
     let random = Math.floor(Math.random() * 101);
     /// Gif Search
     client.search( 'gifs', { "q": "puppies", "offset": random , "limit": 1 } )
