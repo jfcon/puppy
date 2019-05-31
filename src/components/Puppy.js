@@ -37,7 +37,7 @@ class PuppyWindow extends Component {
       <div className="Puppy">
         <header className="Puppy-header">
           <img src={this.state.gif}  alt="puppy gif" /><br />
-          <button onClick={this.getPuppyGif}>`Fetch` Me Another!</button>
+          <button onClick={this.getPuppyGif}>`Fetch` Me Another!</button><button >I Prefer Kitties!</button>
           <p>Please be patient. It may take a few seconds to load...</p>
         </header>
       </div>
