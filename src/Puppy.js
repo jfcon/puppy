@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-require('dotenv').config();
+import './Puppy.css';
 
-//GIPHY KEYS
-const client_id = process.env.GIPHY_KEY; // Your client id
-console.log(client_id);
 
-class App extends Component {
+
+class PuppyWindow extends Component {
   
   constructor () {
     super();
@@ -15,11 +12,11 @@ class App extends Component {
     }
   }
   
-
   componentDidMount () {
-    const GphApiClient = require('giphy-js-sdk-core')
-    const client = GphApiClient(client_id)
-    let random = Math.floor(Math.random() * 101);
+
+  const GphApiClient = require('giphy-js-sdk-core')
+    const client = GphApiClient('CyIdybqkZ7SkYoXz8NBOsqIV4bSpDx86')
+    let random = Math.floor(Math.random() * 251);
     /// Gif Search
     client.search( 'gifs', { "q": "puppies", "offset": random , "limit": 1 } )
     .then((response) => {
@@ -56,4 +53,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default PuppyWindow;
